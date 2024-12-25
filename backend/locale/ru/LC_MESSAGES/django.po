@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-21 21:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Tarasov Nikita kashikuroni@baka-software.ru\n"
+"Language-Team: \n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: users/models.py:76
+msgid "Email"
+msgstr "Email"
+
+#: users/models.py:77
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: users/models.py:78
+msgid "First Name"
+msgstr "Имя"
+
+#: users/models.py:79
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: users/models.py:81
+msgid "Active"
+msgstr "Активный"
+
+#: users/models.py:82
+msgid "Staff"
+msgstr "Администратор"
+
+#: users/models.py:91
+msgid "User"
+msgstr "Пользователь"
+
+#: users/models.py:92
+msgid "Users"
+msgstr "Пользователи"

@@ -1,0 +1,86 @@
+# dependencies
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+
+# testing
+/coverage
+
+# next.js
+.next/
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+*storybook.log
+
+# Python (backend)
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environments
+venv/
+.env
+
+# Django
+db.sqlite3
+/media/
+
+# Ignore all files in migrations except __init__.py
+*/migrations/*
+!*/migrations/__init__.py
+
+# Static files
+/staticfiles/
+/collected_static/
+
+# OS-specific files
+Thumbs.db
+
+# Editor-specific files
+*.log
+*.swp
+*.swo
+*.tmp
+*.bak
+.idea/
+.vscode/
+*.code-workspace
+
+# Docker
+docker-compose.override.yml
+docker-compose.prod.yml
+.docker/
+
+# Git
+*.orig
+*.rej
+
+# CI/CD
+*.key
+*.crt
+*.pem
