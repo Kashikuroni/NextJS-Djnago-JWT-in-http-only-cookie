@@ -1,15 +1,7 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import api from "@/services/backend-api/authApi";
-import { User } from "./AuthProvider.types";
-
-type AuthContextType = {
-  user: User | null;
-  isAuthenticated: boolean;
-  loading: boolean;
-  refreshUser: () => Promise<void>;
-  clearAuth: () => void;
-};
+import { User, AuthContextType } from "./AuthProvider.types";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -18,27 +10,26 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const clearAuth = () => {
+    setUser(null);
+    setIsAuthenticated(false);
+  };
+
   const refreshUser = async () => {
     try {
       const userData = await api.getUser();
       setUser(userData);
       setIsAuthenticated(true);
     } catch (error) {
-      console.error("Failed to refresh user data:", error);
-      setUser(null);
-      setIsAuthenticated(false);
+      clearAuth()
     } finally {
       setLoading(false);
     }
   };
 
-  const clearAuth = () => {
-    setUser(null);
-    setIsAuthenticated(false);
-  };
 
   useEffect(() => {
-    refreshUser(); // Загружаем данные пользователя при монтировании провайдера
+    refreshUser();
   }, []);
 
   return (

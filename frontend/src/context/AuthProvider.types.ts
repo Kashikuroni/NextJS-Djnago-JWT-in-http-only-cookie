@@ -6,3 +6,11 @@ export interface User {
   last_name: string;
   avatar?: string;
 }
+
+export type AuthContextType = {
+  user: User | null;
+  isAuthenticated: boolean;
+  loading: boolean;
+  refreshUser: () => Promise<void>;
+  clearAuth: () => void;
+};

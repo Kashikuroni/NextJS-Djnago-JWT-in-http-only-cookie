@@ -1,4 +1,4 @@
-export interface SigninData {
+export interface LoginData {
   email: string;
   password: string;
 }

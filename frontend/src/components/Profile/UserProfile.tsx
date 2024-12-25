@@ -14,7 +14,6 @@ const UserProfile: React.FC = () => {
     (async () => {
       try {
         await api.logout();
-        clearAuth();
         router.push(loginUrl);
       } catch (error) {
         console.error(error);
@@ -29,7 +28,6 @@ const UserProfile: React.FC = () => {
     if (confirmDelete) {
       try {
         await api.deleteAccount();
-        clearAuth();
         router.push("/auth/login");
       } catch (error) {
         console.error("Failed to delete account:", error);

@@ -9,23 +9,23 @@ export default function Home() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
 
-  if (!isAuthenticated) {
-    return (
-      <div className="flex flex-col h-screen text-blue-400 font-bold justify-center items-center">
-        <LuLoaderCircle className="w-28 h-28 animate-spin" />
-
-        <span className="text-2xl">
-          <TextGradient
-            from="from-blue-500"
-            via="via-blue-200"
-            to="to-blue-500"
-          >
-            Loading...
-          </TextGradient>
-        </span>
-      </div>
-    );
-  }
+  // if (!isAuthenticated) {
+  //   return (
+  //     <div className="flex flex-col h-screen text-blue-400 font-bold justify-center items-center">
+  //       <LuLoaderCircle className="w-28 h-28 animate-spin" />
+  //
+  //       <span className="text-2xl">
+  //         <TextGradient
+  //           from="from-blue-500"
+  //           via="via-blue-200"
+  //           to="to-blue-500"
+  //         >
+  //           Loading...
+  //         </TextGradient>
+  //       </span>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="flex h-screen justify-center items-center bg-gray-100">

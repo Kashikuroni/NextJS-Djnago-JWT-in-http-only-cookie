@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import api from "@/services/backend-api/authApi";
 import { BaseInput } from "@/components/ui/Input/Input";
+import { useAuth } from "@/context/AuthProvider";
 
 export const LoginForm: React.FC = () => {
+  const { refreshUser } = useAuth()
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -22,7 +24,8 @@ export const LoginForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const data = await api.login(formData);
+      await api.login(formData);
+      await refreshUser();
       router.push("/");
     } catch (error) {
       setError(error as string);

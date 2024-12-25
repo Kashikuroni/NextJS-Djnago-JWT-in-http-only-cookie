@@ -31,7 +31,7 @@ class AuthApi extends BaseApi {
   /**
    * Функция регистрации пользователя в системе.
    */
-  public async login(data: types.SigninData): Promise<any> {
+  public async login(data: types.LoginData): Promise<any> {
     const response = await this.post("/api/auth/v1/login/", data);
     return response;
   }
@@ -100,17 +100,8 @@ class AuthApi extends BaseApi {
    * }
    * ```
    */
-  public async refreshToken(): Promise<types.RefreshTokenProps> {
-    const response = await this.post<{}, types.RefreshTokenProps>(
-      "/api/auth/v1/refresh/",
-    );
-    if (!response || typeof response.success !== "boolean") {
-      throw new Error("Invalid response format.");
-    }
-    if (!response.success) {
-      throw new Error(response.message || "Failed to refresh token.");
-    }
-    return response;
+  public async refreshToken(): Promise<void> {
+    await this.post<{}, types.RefreshTokenProps>("/api/auth/v1/refresh/");
   }
 
   public async updateProfile(data: FormData): Promise<any> {
